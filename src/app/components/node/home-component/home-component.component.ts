@@ -9,16 +9,17 @@ import { HandleComponent } from "ngx-vflow";
   styleUrl: './home-component.component.css'
 })
 export class HomeComponentComponent {
- @Input() ctx!: any;
-   @Input() button!:any;
-   @Output() messageEvent = new EventEmitter<string>()
-   msg!:string;
-   
+  @Input() ctx!: any;
+  @Input() button!: any;
+  @Output() messageEvent = new EventEmitter<string>()
 
 
-   onNodeValueChange(data:string) {
-   this.messageEvent.emit(data)
-   data = " ";
-   
-}
+
+
+  onNodeValueChange(data: string) {
+    this.messageEvent.emit(data)
+    if (this.ctx?.node?.data) {
+      this.ctx.node.data.value = '';
+    }
+  }
 }
