@@ -1,0 +1,11 @@
+<div class="nodeStyle">
+    <label>Recibido</label>
+    <input type="text" [(ngModel)]="ctx.node.data.value" >
+    @if(this.button){
+    <button class="btn btn-dark sm mt-2" (click)="onNodeValueChange(ctx.node.data.value)">Ready?</button>
+    }@else {
+    <button class="btn btn-secondary btn-sm mt-2" disabled>Ready?</button>
+    }
+
+</div>
+<handle type="source" position="right" />
