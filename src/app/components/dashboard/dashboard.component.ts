@@ -2,7 +2,7 @@ import { Component, inject} from '@angular/core';
 import { Connection, Node, Edge, Vflow} from 'ngx-vflow';
 import { FormsModule } from '@angular/forms';
 import { NodeServicesService } from '../../services/node-services.service';
-import { PruebaComponent } from "../prueba/prueba.component";
+import { HomeComponentComponent } from "../node/home-component/home-component.component";
 
 
 
@@ -12,7 +12,7 @@ import { PruebaComponent } from "../prueba/prueba.component";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Vflow, FormsModule, PruebaComponent],
+  imports: [Vflow, FormsModule, HomeComponentComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -21,7 +21,8 @@ export class DashboardComponent {
 store = inject(NodeServicesService)
 node: Node[] = this.store.nodes;
 edges: Edge[] = [];
-prueba:boolean=false;
+childInformation!:string;
+enable:boolean=false;
 msg!:string;
 
 
@@ -54,17 +55,15 @@ msg!:string;
     }
   }
 
-  onNodeValueChange(data:string) {
-    this.msg = data;
-   
-  
-}
+
 
 checkStart(){
-  this.prueba=true ;
+  this.enable=true ;
 }
 
-
+recoger(childData:any){
+this.childInformation = childData;
+}
 
 
 }

@@ -4,33 +4,20 @@
     </div>
 
     <div class="workFlow shadow">
-
         <vflow [background]="{type: 'dots'}" [minZoom]="1" [maxZoom]="1" view="auto" [nodes]="node" [edges]="edges"
             (onConnect)="createEdge($event)" (onEdgesChange.add)="handleEdgesAddChange($event)">
-
             <ng-template id="y" let-ctx nodeHtml>
-
-                @if(ctx.node.data.default === 'perfecto'){
-                <div class="prueba">
-                    <label>Recibido</label>
-                    <input type="text" [(ngModel)]="ctx.node.data.value"
-                        (ngModelChange)="onNodeValueChange( ctx.node.data.value)">
-                        @if(this.prueba){
-                        <button class="btn btn-dark sm mt-2">Ready?</button>
-                        }@else {
-                        <button class="btn btn-secondary btn-sm mt-2" disabled>Ready?</button>
-                        }
-                        
-                </div>
-                <handle type="source" position="right" />
+                @if(ctx.node.data.default === 'home'){
+              
+                <app-home-component [ctx]="ctx" [button]="enable" (messageEvent)="recoger($event)"></app-home-component>
                 }
-                @if(ctx.node.data.default === 'hola'){
-                <div class="prueba">
+                @if(ctx.node.data.default === 'contract'){
+                    <div class="nodeStyle">
                     <label>hola esto es una prueba</label>
-                    @if(this.msg){
+                    @if(this.childInformation){
                         <p>😂</p>
                     }
-                    <input value={{this.msg}}>
+                    <input value={{this.childInformation}}>
                 </div>
                 <handle type="target" position="left" />
                 <handle type="source" position="right" />
@@ -38,16 +25,6 @@
                     <button>Delete</button>
                 </node-toolbar>
                 }
-
-
-
             </ng-template>
-
-
-
-
-
         </vflow>
-
-
     </div>
