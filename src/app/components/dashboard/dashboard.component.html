@@ -12,18 +12,10 @@
                 <app-home-component [ctx]="ctx" [button]="enable" (messageEvent)="recoger($event)"></app-home-component>
                 }
                 @if(ctx.node.data.default === 'contract'){
-                    <div class="nodeStyle">
-                    <label>hola esto es una prueba</label>
-                    @if(this.childInformation){
-                        <p>😂</p>
-                    }
-                    <input value={{this.childInformation}}>
-                </div>
-                <handle type="target" position="left" />
-                <handle type="source" position="right" />
-                <node-toolbar>
+                   <app-contract-list-component [ctx]="ctx" [button]="this.childInformation" ></app-contract-list-component>
+               <!--<node-toolbar>
                     <button>Delete</button>
-                </node-toolbar>
+                </node-toolbar> --> 
                 }
             </ng-template>
         </vflow>

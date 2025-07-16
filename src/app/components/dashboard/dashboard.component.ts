@@ -3,6 +3,7 @@ import { Connection, Node, Edge, Vflow} from 'ngx-vflow';
 import { FormsModule } from '@angular/forms';
 import { NodeServicesService } from '../../services/node-services.service';
 import { HomeComponentComponent } from "../node/home-component/home-component.component";
+import {ContractListComponentComponent} from '../node/contract-list-component/contract-list-component.component';
 
 
 
@@ -12,7 +13,7 @@ import { HomeComponentComponent } from "../node/home-component/home-component.co
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Vflow, FormsModule, HomeComponentComponent],
+  imports: [Vflow, FormsModule, HomeComponentComponent,ContractListComponentComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
