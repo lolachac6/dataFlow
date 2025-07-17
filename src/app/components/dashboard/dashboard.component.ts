@@ -8,9 +8,6 @@ import {ContractListComponentComponent} from '../node/contract-list-component/co
 
 
 
-
-
-
 @Component({
   selector: 'app-dashboard',
   imports: [Vflow, FormsModule, HomeComponentComponent,ContractListComponentComponent],
@@ -18,53 +15,26 @@ import {ContractListComponentComponent} from '../node/contract-list-component/co
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
- 
+
 store = inject(NodeServicesService)
 node: Node[] = this.store.nodes;
-edges: Edge[] = [];
+edges: Edge[] = this.store.edges;
 childInformation!:string;
 enable:boolean=false;
-msg!:string;
+showContractComponent: boolean = false;
 
-
-  
- 
-
-  public createEdge({ source, target }: Connection) {
-    this.edges = [
-      ...this.edges,
-      {
-        id: `${source} -> ${target}`,
-        source,
-        target,
-        markers: {
-        end: {
-          type: 'arrow-closed',
-          width: 30,
-          height: 30,
-          color:'black',
-        },
-      },
-      },
-    ];
-   
-    
-  }
-  handleEdgesAddChange(event:any){
-    if(event[0].id === '1 -> 2'){
-      
-    }
-  }
-
+ngOnInit(){
+  console.log(this.edges)
+}
 
 
 checkStart(){
   this.enable=true ;
+  this.edges = [...this.edges];
 }
 
-recoger(childData:any){
-this.childInformation = childData;
-}
-
+recoger(childData: any) {
+  this.childInformation = childData;  
+  }
 
 }

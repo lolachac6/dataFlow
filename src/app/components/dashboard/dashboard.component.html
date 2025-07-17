@@ -5,17 +5,25 @@
 
     <div class="workFlow shadow">
         <vflow [background]="{type: 'dots'}" [minZoom]="1" [maxZoom]="1" view="auto" [nodes]="node" [edges]="edges"
-            (onConnect)="createEdge($event)" (onEdgesChange.add)="handleEdgesAddChange($event)">
-            <ng-template id="y" let-ctx nodeHtml>
-                @if(ctx.node.data.default === 'home'){
-              
+            >
+            <ng-template let-ctx edge>
+                <svg:g customTemplateEdge >
+                    @if(this.enable){
+                        <svg:path [class]="ctx.edge.data ? 'animated-edge' : 'animated'" fill="none" [attr.d]="ctx.path()" [attr.stroke-width]="2"
+                [attr.stroke]="'black'" [attr.marker-end]="ctx.markerEnd()" />
+                    }
+                    
+                </svg:g>
+            </ng-template>
+            <ng-template let-ctx nodeHtml>
+                @if(ctx.node.data.default === 'home' ){
                 <app-home-component [ctx]="ctx" [button]="enable" (messageEvent)="recoger($event)"></app-home-component>
                 }
-                @if(ctx.node.data.default === 'contract'){
-                   <app-contract-list-component [ctx]="ctx" [button]="this.childInformation" ></app-contract-list-component>
-               <!--<node-toolbar>
+                @if(ctx.node.data.default === 'contract' ){
+                <app-contract-list-component [ctx]="ctx" [button]="this.childInformation"></app-contract-list-component>
+                <!--<node-toolbar>
                     <button>Delete</button>
-                </node-toolbar> --> 
+                </node-toolbar> -->
                 }
             </ng-template>
         </vflow>

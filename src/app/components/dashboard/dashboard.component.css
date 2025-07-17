@@ -18,7 +18,7 @@
 }
 
 .animated-edge{
-  stroke-linecap: round;
+    stroke-linecap: round;
         stroke-linejoin: round;
         stroke-dasharray: 10; 
         stroke-dashoffset: 200; 
@@ -31,7 +31,12 @@
         }
       }
 
-
+.animated{
+  stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 10; 
+        stroke-dashoffset: 200; 
+}
 
 
 
