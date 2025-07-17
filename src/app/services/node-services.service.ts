@@ -37,30 +37,18 @@ export class NodeServicesService {
       id: '1 -> 2',
       source: '1',
       target: '2',
-      type: 'template',
-      
-      markers: {
-        end: {
-          type: 'arrow-closed',
-          width: 30,
-          height: 30,
-          color:'black',
-        },
-      },
+      type:'template',
+      data:{
+       type: 'animated-edge'
+      }
+     
     },
     {
       id: '2 -> 3',
       source: '2',
       target: '3',
-      type: 'template',
-       markers: {
-        end: {
-          type: 'arrow-closed',
-          width: 30,
-          height: 30,
-          color:'black',
-        },
-      },  
+      type:'template'
+      
     }
     
   ];
