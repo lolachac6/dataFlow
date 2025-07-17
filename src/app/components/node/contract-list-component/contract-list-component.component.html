@@ -1,10 +1,30 @@
-<div class="nodeStyle">
-                    <label>hola esto es una prueba</label>
-                    @if(this.button){
-                        <p>🥳🥳🥳🥳</p>
-                    }
-                    <input class="nodeContractInput" value={{this.button}}>
-                </div>
-                <handle type="target" position="left" />
-                <handle type="source" position="right" />
+<div [class]="this.button ? ' nodeStyleSuccess' : 'nodeStyle'">
+  <handle type="target" position="left" />
+  <handle type="source" position="right" />
+
+  <div class="node-header">
+    @if(!button){
+         <h2><i class="fa-solid fa-file-contract fa-2xl" style="color: #84a3ab;"></i></h2>
+    }@else{
+         <h2><i  class="fa-solid fa-file-contract fa-2xl fa-spin-pulse" style="color: #3bba11;"></i></h2>
+         @if(this.activated){
+          @for(contracts of this.arrContracts; track contracts.id){
+            <p>{{contracts.firstName}}</p>
+           
+          }
+         }
+    }
+   
+  </div>
+
+  @if(this.button){
+    <button type="button" data-bs-target="#contractModal" data-bs-toggle="modal" class=" mt-4 ms-4 btn btn-dark sm-btn"  >
+      View
+    </button>
+     
+  }
+</div>
+
+<app-modal  ></app-modal>
+
 
