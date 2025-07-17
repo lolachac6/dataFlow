@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HandleComponent } from "ngx-vflow";
+
+
 
 @Component({
   selector: 'app-home-component',
@@ -10,16 +12,14 @@ import { HandleComponent } from "ngx-vflow";
 })
 export class HomeComponentComponent {
   @Input() ctx!: any;
-  @Input() button!: any;
+  @Input() button!: boolean;
   @Output() messageEvent = new EventEmitter<string>()
-
-
-
-
-  onNodeValueChange(data: string) {
+  
+  onNodeValueChange(data:any) {
     this.messageEvent.emit(data)
-    if (this.ctx?.node?.data) {
-      this.ctx.node.data.value = '';
-    }
+    
   }
+
+
+
 }

@@ -1,38 +1,37 @@
 .nodeStyle {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem;
+  align-items: center; 
+  justify-content: center;
+  padding: 30px;
+  padding-top:40px;
   background-color: #f8f9fa;
-  border-radius: 12px;
+  border-radius:  40px 6px 6px 20px;
+  border: 2px solid black;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-width: 250px;
+  width: auto; 
+  min-height: 120px;
+  position: relative;
+  gap: 0.5rem;
+  text-align: center;
 }
 
-.nodeStyle label {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: #343a40; 
+.nodeStyleRed{
+   display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  padding: 30px;
+  padding-top:40px;
+  background-color: #f8f9fa;
+  border-radius:  40px 6px 6px 20px;
+  border: 2px solid rgb(92, 41, 41);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: auto; 
+  min-height: 120px;
+  position: relative;
+  gap: 0.5rem;
+  text-align: center;
 }
 
-.nodeStyle input[type="text"] {
-  width: 100%;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  transition: border-color 0.3s;
-}
 
-.nodeStyle input[type="text"]:focus {
-  border-color: #495057;
-  outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.1);
-  
-}
-
-.nodeStyle button {
-  margin-top: 0.75rem;
-  width: 100%;
-  font-size: 0.9rem;
-}

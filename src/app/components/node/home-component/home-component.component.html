@@ -1,11 +1,11 @@
-<div class="nodeStyle">
-    <label >Click here to start!</label>
-    <input type="text" [(ngModel)]="ctx.node.data.value" >
+<div [class]="this.button ? 'nodeStyleRed' : 'nodeStyle' ">
+     <handle type="source" position="right" />
     @if(this.button){
-    <button class="btn btn-dark sm mt-2" (click)="onNodeValueChange(ctx.node.data.value)">Ready?</button>
+    <h1><i class="fa-solid fa-circle-play fa-2xl" style="color: #b40404;" (mousemove)=" onNodeValueChange(this.ctx)" ></i></h1>
+   
     }@else {
-    <button class="btn btn-secondary btn-sm mt-2" disabled>Ready?</button>
+    <h1><i class="fa-solid fa-circle-play fa-2xl"></i></h1>
     }
 
 </div>
-<handle type="source" position="right" />
+ 
