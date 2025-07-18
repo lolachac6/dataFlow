@@ -1,5 +1,4 @@
-import { Component, effect, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Icontract } from '../../../interfaces/icontract.interface';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SharedInformationService } from '../../../services/shared-information.service';
 import { Router } from '@angular/router';
