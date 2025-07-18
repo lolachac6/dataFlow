@@ -15,19 +15,6 @@ import { Ishared } from '../../../interfaces/ishared.interface';
 export class HomeComponentComponent {
   @Input() ctx!:any ;
   @Input() button!: boolean;
-  
-  dataSharedService= inject(SharedInformationService)
-  dataContract!:Ishared;
-  
- 
-
-  constructor(){
-    effect(()=>{
-     this.dataContract = this.dataSharedService.getContract();
-     
-    })
-  }
-
-
+  @Input() sharedData!: Ishared;
 
 }
