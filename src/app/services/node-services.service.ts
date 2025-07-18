@@ -9,7 +9,7 @@ export class NodeServicesService {
   nodes:  Node[] = [
     {
       id: '1',
-      point: ({ x: 100, y: 200 }),
+      point: ({ x: 100, y: 230 }),
       type: 'html-template',
       data: {default:'home', value:''}
        
@@ -17,16 +17,16 @@ export class NodeServicesService {
    
     {
       id: '2',
-      point: ({ x: 500 ,y: 100 }) ,
+      point: ({ x: 400 ,y: 238 }) ,
       type:'html-template',
       data: {default:'contract', value:''}
       
     },
      {
       id: '3',
-      point: ({ x: 750 ,y: 200 }),
-      type: 'default',
-      text: 'Contratos',
+      point: ({ x: 700 ,y: 400 }),
+      type: 'html-template',
+      data: {default:'endContract', value:''}
     },
 
     
@@ -47,7 +47,10 @@ export class NodeServicesService {
       id: '2 -> 3',
       source: '2',
       target: '3',
-      type:'template'
+      type:'template',
+      data:{
+       type: 'animated-edge'
+      }
       
     }
     
