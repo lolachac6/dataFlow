@@ -1,0 +1,48 @@
+<div class="modal fade" id="modalList" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" >
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">List of Contracts</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">FirstName</th>
+                            <th scope="col">LastName</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(contract of this.arrContract;track contract.id){
+                            @if(this.dataContract){
+                            <tr [class.table-warning]="contract.id ===this.dataId">
+                            <td>{{contract.firstName}}</td>
+                            <td>{{contract.lastName}}</td>
+                            <td>{{contract.position}}</td>
+                            <td>{{contract.salary}}</td>
+                            <td>{{contract.status}}</td>
+                        </tr>
+                            }@else {
+                            <tr >
+                            <td>{{contract.firstName}}</td>
+                            <td>{{contract.lastName}}</td>
+                            <td>{{contract.position}}</td>
+                            <td>{{contract.salary}}</td>
+                            <td>{{contract.status}}</td>
+                        </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
