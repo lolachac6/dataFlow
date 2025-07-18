@@ -1,28 +1,18 @@
-<div [class]="this.button ? ' nodeStyleSuccess' : 'nodeStyle'">
+<div [class]="this.data ? ' nodeStyleSuccess' : 'nodeStyle'">
   <handle type="target" position="left" />
   <handle type="source" position="right" />
 
   <div class="node-header">
-    @if(!button){
+    @if(!this.data){
          <h2><i class="fa-solid fa-file-contract fa-2xl" style="color: #84a3ab;"></i></h2>
     }@else{
          <h2><i  class="fa-solid fa-file-contract fa-2xl fa-spin-pulse" style="color: #3bba11;"></i></h2>
-         @if(this.activated){
-          @for(contracts of this.arrContracts; track contracts.id){
-            <p>{{contracts.firstName}}</p>
-           
-          }
-         }
+         
     }
-   
   </div>
-
-  @if(this.button){
-    <button type="button"   class=" mt-4 ms-4 btn btn-dark sm-btn"  >
-      View
-    </button>
+  
      
-  }
+
 </div>
 
 
