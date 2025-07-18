@@ -20,13 +20,16 @@
             </ng-template>
             <ng-template let-ctx nodeHtml>
                 @if(ctx.node.data.default === 'home' ){
-                <app-home-component [ctx]="ctx" ></app-home-component>
+                <app-home-component  [sharedData]="sharedData"></app-home-component>
                 }
                 @if(ctx.node.data.default === 'contract' ){
-                <app-contract-list-component [ctx]="ctx" [button]="this.childInformation"  ></app-contract-list-component>
+                <app-contract-list-component  [button]="this.childInformation" [shared]="sharedData" ></app-contract-list-component>
                 }
                  @if(ctx.node.data.default === 'endContract' ){
-                <app-end-contract [ctx]="ctx"></app-end-contract>
+                <app-end-contract  [sharedContract]="sharedData"></app-end-contract>
+                }
+                @if(ctx.node.data.default === 'errorContract'){
+                <app-error-contract [sharedErrorContract]="sharedData"></app-error-contract>
                 }
             </ng-template>
            
