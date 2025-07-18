@@ -28,6 +28,12 @@ export class NodeServicesService {
       type: 'html-template',
       data: {default:'endContract', value:''}
     },
+     {
+      id: '4',
+      point: ({ x: 700 ,y: 120 }),
+      type: 'html-template',
+      data: {default:'errorContract', value:''}
+    },
 
     
   ];
@@ -47,6 +53,16 @@ export class NodeServicesService {
       id: '2 -> 3',
       source: '2',
       target: '3',
+      type:'template',
+      data:{
+       type: 'animated-edge'
+      }
+      
+    },
+    {
+      id: '2 -> 4',
+      source: '2',
+      target: '4',
       type:'template',
       data:{
        type: 'animated-edge'
