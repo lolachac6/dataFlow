@@ -1,18 +1,15 @@
-<div [class]="this.data ? ' nodeStyleSuccess' : 'nodeStyle'">
+<div [class]="this.shared ? ' nodeStyleSuccess' : 'nodeStyle'">
   <handle type="target" position="left" />
   <handle type="source" position="right" />
 
   <div class="node-header">
-    @if(!this.data){
-         <h2><i class="fa-solid fa-file-contract fa-2xl" style="color: #84a3ab;"></i></h2>
-    }@else{
-         <h2><i  class="fa-solid fa-file-contract fa-2xl fa-spin-pulse" style="color: #3bba11;"></i></h2>
+    @if(!this.shared){
+         <h2><i class="fa-solid fa-file-contract fa-2xl" style="color: #84a3ab;" ></i></h2>
          
+    }@else{
+         <h2><i  class="fa-solid fa-file-contract fa-2xl fa-spin-pulse" style="color: #f3e812;" data-bs-target="#modalList" data-bs-toggle="modal"></i></h2> 
     }
   </div>
-  
-     
-
 </div>
 
 
