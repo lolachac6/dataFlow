@@ -3,21 +3,35 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Hello!</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <h3>Search Contract</h3>
-        <form>
+        <form [formGroup]="contractForm" (ngSubmit)="cargarDatos()" >
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Contract id:</label>
-            <input type="text" placeholder="b78c5a57" class="form-control" id="recipient-name">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">First name:</label>
-            <input type="text" class="form-control" placeholder="Alice" id="recipient-name">
-          </div>
-        </form>
+            <label  class="col-form-label" for="idContract" >Contract id:</label>
+            <input type="text" id="idContract" placeholder="b78c5a57" class="form-control" formControlName="idContract" >
+             @if(checkControl("idContract","required")){
+              <p class="text-danger mt-1">This field is required</p>
+            }
+             @if(checkControl("idContract","pattern")){
+              <p class="text-danger mt-1">The id format is incorrect.</p>
+            }
+            
 
+          </div>
+          <div class="mb-3">
+            <label for="firstName" class="col-form-label">First name:</label>
+            <input type="text" id="firstName" class="form-control" placeholder="Alice" formControlName="firstName">
+            @if(checkControl("firstName","pattern")){
+              <p class="text-danger mt-1">Please use letters only, and enter at least 3 characters</p>
+            }
+            @if(checkControl("firstName","required")){
+              <p class="text-danger mt-1">This field is required</p>
+            }
+        
+          </div>
+          <input type="submit" [disabled]="!contractForm.valid"  data-bs-dismiss="modal" class="btn btn-dark" >
+        </form>
       </div>
       <div class="modal-footer">
 
