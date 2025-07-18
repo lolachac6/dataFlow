@@ -139,4 +139,10 @@ export class ContractService {
   }
 ]
 
+findContracts(id:string,firstName:string):Icontract[]{
+  let res;
+  res = this.contracts.filter(x=>x.id=== id && x.firstName === firstName)
+  return res;
+}
+
 }
