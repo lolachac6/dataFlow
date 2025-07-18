@@ -9,22 +9,26 @@
             <ng-template let-ctx edge>
                 <svg:g customTemplateEdge >
                     @if(this.enable){
-                        <svg:path [class]="ctx.edge.data ? 'animated-edge' : 'animated'" fill="none" [attr.d]="ctx.path()" [attr.stroke-width]="2"
+                        <svg:path class="animated-edge" fill="none" [attr.d]="ctx.path()" [attr.stroke-width]="2"
                 [attr.stroke]="'black'" [attr.marker-end]="ctx.markerEnd()" />
+                    }@else{
+                      <svg:path  fill="none" [attr.d]="ctx.path()" [attr.stroke-width]="2"
+                [attr.stroke]="'black'" [attr.marker-end]="ctx.markerEnd()" />  
                     }
                     
                 </svg:g>
             </ng-template>
             <ng-template let-ctx nodeHtml>
                 @if(ctx.node.data.default === 'home' ){
-                <app-home-component [ctx]="ctx" [button]="enable" (messageEvent)="recoger($event)"></app-home-component>
+                <app-home-component [ctx]="ctx" ></app-home-component>
                 }
                 @if(ctx.node.data.default === 'contract' ){
-                <app-contract-list-component [ctx]="ctx" [button]="this.childInformation"></app-contract-list-component>
-                <!--<node-toolbar>
-                    <button>Delete</button>
-                </node-toolbar> -->
+                <app-contract-list-component [ctx]="ctx" [button]="this.childInformation"  ></app-contract-list-component>
+                }
+                 @if(ctx.node.data.default === 'endContract' ){
+                <app-end-contract [ctx]="ctx"></app-end-contract>
                 }
             </ng-template>
+           
         </vflow>
     </div>

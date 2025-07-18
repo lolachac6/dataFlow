@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { NodeServicesService } from '../../services/node-services.service';
 import { HomeComponentComponent } from "../node/home-component/home-component.component";
 import {ContractListComponentComponent} from '../node/contract-list-component/contract-list-component.component';
+import { Icontract } from '../../interfaces/icontract.interface';
+import { EndContractComponent } from "../node/end-contract/end-contract.component";
 
 
 
@@ -11,7 +13,7 @@ import {ContractListComponentComponent} from '../node/contract-list-component/co
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Vflow, FormsModule, HomeComponentComponent, ContractListComponentComponent],
+  imports: [Vflow, FormsModule, HomeComponentComponent, ContractListComponentComponent, EndContractComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -22,11 +24,7 @@ node: Node[] = this.store.nodes;
 edges: Edge[] = this.store.edges;
 childInformation!:string;
 enable:boolean=false;
-showContractComponent: boolean = false;
 
-ngOnInit(){
-  console.log(this.edges)
-}
 
 
 checkStart(){
@@ -38,4 +36,5 @@ recoger(childData: any) {
   this.childInformation = childData;  
   }
 
+  
 }
