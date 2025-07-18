@@ -1,0 +1,23 @@
+.nodeStyle {
+  position: relative;
+  background-color: #f8f9fa;
+  border:2px solid#3bba11;
+  border-radius: 16px;
+  padding: 20px;
+  padding-left:30px;
+  width: auto;
+  height:auto;
+  
+}
+
+.nodeStyleFake {
+  position: relative;
+  background-color: #f8f9fa;
+  border:2px solid#2a2c29;;
+  border-radius: 16px;
+  padding: 20px;
+  padding-left:30px;
+  width: auto;
+  height:auto;
+  
+}
