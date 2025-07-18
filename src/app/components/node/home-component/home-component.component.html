@@ -1,10 +1,10 @@
-<div [class]="this.button ? 'nodeStyleRed' : 'nodeStyle' ">
+<div [class]="this.dataContract ? 'nodeStyleRed' : 'nodeStyle' ">
      <handle type="source" position="right" />
-    @if(this.button){
-    <h1><i class="fa-solid fa-circle-play fa-2xl" style="color: #b40404;" (mousemove)=" onNodeValueChange(this.ctx)" ></i></h1>
+    @if(this.dataContract){
+    <h1><i class="fa-solid fa-circle-play fa-xl" style="color: #b40404;"  ></i></h1>
    
     }@else {
-    <h1><i class="fa-solid fa-circle-play fa-2xl"></i></h1>
+    <h1><i class="fa-solid fa-circle-play fa-xl"></i></h1>
     }
 
 </div>

@@ -1,6 +1,8 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, effect,inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HandleComponent } from "ngx-vflow";
+import { SharedInformationService } from '../../../services/shared-information.service';
+import { Ishared } from '../../../interfaces/ishared.interface';
 
 
 
@@ -11,13 +13,19 @@ import { HandleComponent } from "ngx-vflow";
   styleUrl: './home-component.component.css'
 })
 export class HomeComponentComponent {
-  @Input() ctx!: any;
+  @Input() ctx!:any ;
   @Input() button!: boolean;
-  @Output() messageEvent = new EventEmitter<string>()
   
-  onNodeValueChange(data:any) {
-    this.messageEvent.emit(data)
-    
+  dataSharedService= inject(SharedInformationService)
+  dataContract!:Ishared;
+  
+ 
+
+  constructor(){
+    effect(()=>{
+     this.dataContract = this.dataSharedService.getContract();
+     
+    })
   }
 
 
