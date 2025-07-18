@@ -1,6 +1,6 @@
-<div [class]="this.data ?' nodeStyle' : 'nodeStyleFake'">
+<div [class]="this.dataId ?' nodeStyle' : 'nodeStyleFake'">
   <handle type="target" position="left" />
-  @if(this.data){
+  @if(this.dataId){
     <h2><i class="fa-solid fa-user-check fa-lg" style="color: #0de732;"></i></h2>
   }@else {
      <h2><i class="fa-solid fa-user-check fa-lg" style="color: #bbbbbb;"></i></h2>
